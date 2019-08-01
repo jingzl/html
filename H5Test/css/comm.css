@@ -8,7 +8,6 @@ p.wdrp{
 	word-wrap: break-word;
 }
 
-
 #box{
 	width:100px;
 	height: 100px;
@@ -74,3 +73,55 @@ p.wdrp{
 #imgscale{
 	transform:scale(1.2);
 }
+
+div{
+	height: 30px;
+	widows: 100px;
+	line-height: 30px;
+	border-radius: 5px;
+	color:#000;
+	background-color: silver;
+	transition:all 1s linear;
+}
+div:hover{
+	color:white;
+	background-color: #45B823;
+}
+
+@keyframes  mycolor{
+	0% {background-color:red;}
+	30% {background-color: blue;}
+	60% {background-color:yellow;}
+	100% {background-color:green;}	
+}
+div:hover{
+	animation: mycolor 5s linear;
+}
+
+
+#stage{
+	width:300px;
+	margin:100px auto;
+	perspective:100px;
+}
+.box{
+	width: 100px;
+	height: 100px;
+	float:left;
+	transition:linear 1s;
+	transform-style: preserve-3d;
+}
+img{
+	width:100px;
+	height:75px;
+}
+.x:hover{
+	transform:rotateX(60deg);
+}
+.y:hover{
+	transform:rotateY(60deg);
+}
+.z:hover{
+	transform:rotateZ(60deg);
+}
+

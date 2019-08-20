@@ -20,6 +20,7 @@
 				font: "微软雅黑";
 				font-size: 20px;
 			}
+			
 			p{
 				color: blue;
 				font-size: 16px;
@@ -49,6 +50,7 @@
 
 		</style>
 		<script src="js/test.js"></script>
+		<script type="text/javascript" src="js/jquery-3.4.1.js" ></script>
 
 	</head>
 
@@ -57,10 +59,15 @@
 		<hr>
 		<div align="center">
 			<hl>Web前端开发</hl>
-			<ul> HTML </ul>
+			<ul> 
+				<li title="apple">苹果</li>
+				<li title="banana">香蕉</li>
+				<li title="berry">草莓</li>
+			</ul>
 			<ul> CSS </ul>
 			<ul> JavaScript </ul>
 		</div>
+		
 		<p> 测试CSS样式 </p>
 		<p class="one">类别1</p>
 		<p class="two">类别2</p>
@@ -76,7 +83,7 @@
 
 		<form id="registerForm">
 			<input type="checkbox" name="boy" id="aaa"/>
-			<input type="checkbox" name="boy" />
+			<input type="button" id="btn" name="btn" value="提交"/>
 			<input type="checkbox" name="boy" />
 		</form>
 
@@ -144,7 +151,39 @@
 	var h1 = document.getElementById("aaa");
 	//h1.setAttributeNode("name", "abc")
 	
-	$("#stage");
+	var form1 = document.getElementById("registerForm");
+	console.log( form1 );
+	
+	console.log($("#newsimglist").length);
+	
+	console.log( $("#longword").html() );
+	console.log( $(".wdrp").html() );
+	console.log( $("h1").html() );
+	
+	$("h1").text("hello，标题");
+	
+	console.log( $("input:eq(1)").val() );
+	$("input:eq(1)").val("我被点击了")
+	
+	$("body").css("background-color", "#E5E5E5");
+	
+	// 添加新元素
+	var $input = $("<input type='radio' name='male' />");
+	var $parent = $("#registerForm");
+	$parent.append( $input );
+	
+	// 删除
+	$("ul li:eq(1)").remove();
+	//$("ul li").remove("li[title=='berry']");
+	
+	// 事件绑定
+	$("#btn").bind( "click", function(e){
+		alert("hello, click");
+	} )
+	
+	
+	
+	
 	
 </script>
 

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,user-scalable=no, 
+			initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+
+		<title>HTML5特性</title>
+		<style type="text/css">
+			#myCanvas{
+				border: 1px solid black;
+			}
+			#myvideo{
+				border: 1px solid blue;
+			}
+			
+			body{
+				background-color: gray;
+			}
+			@media screen and (min-width: 768px) { /*大于等于768*/
+				body{
+					background-color: red;
+				}
+			}
+			@media screen and (min-width: 992px) { /*大于等于992*/
+				body{
+					background-color: green;
+				}
+			}
+			
+		</style>
+	</head>
+	<body>
+		<header><h1>HTML5结构新标签</h1></header>
+		<nav>
+			<ul>
+				<li><a href="#">菜单1</a></li>
+				<li><a href="#">菜单2</a></li>
+				<li><a href="#">菜单3</a></li>
+				<li><a href="#">菜单4</a></li>
+			</ul>
+		</nav>
+		<content>
+			<section>
+				<header>内容标题</header>
+				<article>文章内容</article>
+				<footer>文章版权内容</footer>
+			</section>
+			<section>
+				<header>内容标题2</header>
+				<article>文章内容2</article>
+				<footer>文章版权内容2</footer>
+			</section>
+			
+			<audio src="1.mp3" controls="controls"></audio>
+			<br>
+			<video id="myvideo" width="420">
+				<source src="course.mp4" type="video/mp4"></source>
+			</video>
+			<button onclick="playPause()">播放/暂停</button>
+			<br>
+			<canvas id="myCanvas" width="600" height="480">
+			</canvas>
+			
+			<br>
+			
+			
+		</content>
+		<aside>相关内容</aside>
+		<footer>页脚、页面版权内容</footer>
+	</body>
+	
+	<script>
+		var v=document.getElementById("myvideo");
+		function playPause()
+		{
+			if ( v.paused )
+				v.play();
+			else
+				v.pause();
+		}
+		
+		function draw(event){
+			var canvas = document.getElementById("myCanvas");
+			var pen = canvas.getContext("2d");
+			pen.moveTo( 50, 50 );
+			pen.lineTo( 300, 300 );
+			pen.lineWidth = 5;
+			pen.strokeStyle = "red";
+			pen.stroke();
+		}
+		window.onload = draw();
+		
+	</script>
+</html>
